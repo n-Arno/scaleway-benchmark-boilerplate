@@ -11,11 +11,14 @@ source "scaleway" "main" {
 
 build {
   sources = ["source.scaleway.main"]
-  provisioner "file" {
+  provisioner "file" { # Copy run benchmark script
     source = "run.sh"
     destination = "/tmp/run.sh"
   }
-  provisioner "shell" {
+  provisioner "shell" { # Prepare application
+    script = "app.sh"
+  }
+  provisioner "shell" { # Prepare benchmark
     script = "install.sh"
   }
 }

@@ -12,7 +12,8 @@ Prerequisites:
 - create a Scaleway API key and with object storage and instance rights:
   - update `install.sh` to be used in the image
   - add them as env vars (`SCW_*`) to be used by packer and terraform
-- update the `run.sh` script with needed steps for benchmark. The script need to output its results in stdout (here for example, a php benchmark is run)
+- update the `app.sh` script with needed steps to install the application to benchmark. Here, we are installing the PHP Symfony demo app.
+- update the `run.sh` script with needed steps for benchmark. The script need to output its results in stdout (here for example, we run apache benchmark).
 
 The list of tested instances are in the terraform manifest. Note that we can't tests x86 and ARM instances with the same image/run.
 

@@ -49,7 +49,7 @@ data "scaleway_instance_image" "benchmark_image" {
   name = "benchmark"
 }
 
-resource "scaleway_instance_server" "postgres" {
+resource "scaleway_instance_server" "bench" {
   for_each          = var.todo
   name              = format("srv-bench-%s", lower(each.key))
   type              = each.key

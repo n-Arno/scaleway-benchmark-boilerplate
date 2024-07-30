@@ -78,8 +78,7 @@ chmod +x /opt/benchmark/bench.sh
 cat<<EOF>/etc/systemd/system/benchmark.service
 [Unit]
 Description=Run Benchmark
-After=local-fs.target
-After=network.target
+After=apache2.service
 
 [Service]
 Environment="SCW_CONFIG_PATH=/root/.config/scw/config.yaml"

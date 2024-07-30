@@ -1,7 +1,2 @@
 #!/bin/bash
-apt-get update 1>/dev/null 2>&1
-apt-get install php php-zip -y 1>/dev/null 2>&1
-curl -sSLO https://raw.githubusercontent.com/sergix44/php-benchmark-script/master/io.bench.php
-curl -sSLO https://raw.githubusercontent.com/sergix44/php-benchmark-script/master/rand.bench.php
-curl -sSLO https://raw.githubusercontent.com/SergiX44/php-benchmark-script/master/bench.php
-php bench.php
+ab -l -c 15 -n 5000 http://127.0.0.1:80/en/blog/ 2>&1

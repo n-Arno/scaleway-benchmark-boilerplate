@@ -6,7 +6,7 @@ packer:
 
 terraform:
 	terraform init
-	terraform apply --auto-approve
+	terraform apply --auto-approve --parallelism=5
 
 dist-clean:
 	rm -rf .terraform terraform.tfstate terraform.tfstate terraform.tfstate.backup
